@@ -1,0 +1,14 @@
+{% extends 'django_auth_goblin/master.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Bienvenido, {{ user.username }}</h2>
+        <p>Este es un punto de inicio para la página de tareas. El desarrollador debe reemplazar este contenido con su propia implementación.</p>
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                Logout
+            </button>
+        </form>
+    </div>
+{% endblock %}
